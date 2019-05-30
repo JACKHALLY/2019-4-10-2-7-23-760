@@ -1,9 +1,7 @@
 function calcDistancePrice(distance) {
-  let price;
-  if(distance <= 2) {
-    price = 6;
-  } else {
-    price = 10;
+  let price = 6;
+  if(distance > 2) {
+    price += (distance - 2) * 0.8;
   }
   return price;
 }
