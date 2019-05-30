@@ -1,13 +1,16 @@
 function calcDistancePrice(distance) {
   const BaseDistance = 2;
+  const PenaltyDistance = 8;
   const BasePrice = 6;
   const UnitDistPrice = 0.8;
-
-  if(distance === 10) {
-    return 12.8;
-  }
+  const Penalty = 1.25;
 
   let price = BasePrice;
+  if(distance > PenaltyDistance) {
+    price += (distance - PenaltyDistance) * UnitDistPrice * Penalty;
+    distance = PenaltyDistance;
+  }
+  
   if(distance > BaseDistance) {
     price += (distance - BaseDistance) * UnitDistPrice;
   }
