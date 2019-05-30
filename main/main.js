@@ -1,12 +1,10 @@
-const PenaltyDistance = 8;
-const UnitDistPrice = 0.8;
-
-function calcPenaltyDistancePrice(distObj) {
+function calcPenaltyDistancePrice(distObj, unitPrice) {
   const Penalty = 1.5;
+  const PenaltyDistance = 8;
 
   let penalty = 0;
   if(distObj.distance > PenaltyDistance) {
-    penalty = (distObj.distance - PenaltyDistance) * UnitDistPrice * Penalty;
+    penalty = (distObj.distance - PenaltyDistance) * unitPrice * Penalty;
     distObj.distance = PenaltyDistance;
   }
   return penalty;
@@ -15,11 +13,12 @@ function calcPenaltyDistancePrice(distObj) {
 function calcDistancePrice(distance) {
   const BaseDistance = 2;
   const BasePrice = 6;
+  const UnitDistPrice = 0.8;
 
   let price = BasePrice;
   let distObj = new Object();
   distObj.distance = distance;
-  price += calcPenaltyDistancePrice(distObj);
+  price += calcPenaltyDistancePrice(distObj, UnitDistPrice);
   distance = distObj.distance;
 
   if(distance > BaseDistance) {
