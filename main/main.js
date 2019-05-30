@@ -1,6 +1,6 @@
-function calcDistancePrice(inputs) {
+function calcDistancePrice(distance) {
   let price;
-  if(inputs['distance'] <= 2) {
+  if(distance <= 2) {
     price = 6;
   } else {
     price = 10;
@@ -8,9 +8,9 @@ function calcDistancePrice(inputs) {
   return price;
 }
 
-function calcParkingPrice(inputs) {
+function calcParkingPrice(parkingTime) {
   const UnitParkingPrice = 0.25;
-  return inputs["parkTime"] * UnitParkingPrice;
+  return parkingTime * UnitParkingPrice;
 }
 
 function refinePrice(price) {
@@ -18,8 +18,8 @@ function refinePrice(price) {
 }
 
 function calcPrice(inputs) {
-  let price = calcDistancePrice(inputs);
-  price += calcParkingPrice(inputs);
+  let price = calcDistancePrice(inputs["distance"]);
+  price += calcParkingPrice(inputs["parkTime"]);
 
   return refinePrice(price);
 }
