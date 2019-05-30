@@ -1,5 +1,6 @@
 function calcParkingPrice(inputs) {
-  return inputs["parkTime"] * 0.25;
+  const UnitParkingPrice = 0.25;
+  return inputs["parkTime"] * UnitParkingPrice;
 }
 
 function calcPrice(inputs) {
