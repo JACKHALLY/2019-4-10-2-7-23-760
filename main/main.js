@@ -3,11 +3,15 @@ function calcParkingPrice(inputs) {
   return inputs["parkTime"] * UnitParkingPrice;
 }
 
+function refinePrice(price) {
+  return parseInt(price + 0.5)
+}
+
 function calcPrice(inputs) {
   let price = 6;
   price += calcParkingPrice(inputs);
 
-  return parseInt(price + 0.5);
+  return refinePrice(price);
 }
 module.exports = function main(inputs) {
     // write your code here...
