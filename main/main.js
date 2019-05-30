@@ -4,11 +4,16 @@ function calcParkingPrice(inputs) {
 }
 
 function refinePrice(price) {
-  return parseInt(price + 0.5)
+  return parseInt(price + 0.5);
 }
 
 function calcPrice(inputs) {
   let price = 6;
+  if(inputs['distance'] <= 2) {
+    price = 6;
+  } else {
+    price = 10;
+  }
   price += calcParkingPrice(inputs);
 
   return refinePrice(price);
