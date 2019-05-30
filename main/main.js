@@ -6,7 +6,7 @@ function calcPrice(inputs) {
   let price = 6;
   price += calcParkingPrice(inputs);
 
-  return price;
+  return parseInt(price + 0.5);
 }
 module.exports = function main(inputs) {
     // write your code here...
