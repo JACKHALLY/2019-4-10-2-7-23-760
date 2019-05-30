@@ -3,14 +3,14 @@ function calcDistancePrice(distance) {
   const PenaltyDistance = 8;
   const BasePrice = 6;
   const UnitDistPrice = 0.8;
-  const Penalty = 1.25;
+  const Penalty = 1.5;
 
   let price = BasePrice;
   if(distance > PenaltyDistance) {
     price += (distance - PenaltyDistance) * UnitDistPrice * Penalty;
     distance = PenaltyDistance;
   }
-  
+
   if(distance > BaseDistance) {
     price += (distance - BaseDistance) * UnitDistPrice;
   }
