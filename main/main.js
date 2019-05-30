@@ -23,7 +23,8 @@ function calcParkingPrice(parkingTime) {
 }
 
 function refinePrice(price) {
-  return parseInt(price + 0.5);
+  const RoundOff = 0.5;
+  return parseInt(price + RoundOff);
 }
 
 function calcPrice(inputs) {
