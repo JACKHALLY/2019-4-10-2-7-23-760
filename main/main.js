@@ -1,8 +1,11 @@
 function calcPrice(inputs) {
+  let price = 6;
   if(inputs["parkTime"] === 0) {
-    return 6;
+    price += 0;
+  } else {
+    price += 1;
   }
-  return 7;
+  return price;
 }
 module.exports = function main(inputs) {
     // write your code here...
