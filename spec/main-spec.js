@@ -6,6 +6,11 @@ describe('taxi fee', function () {
         let summary = main(inputs);
         let expected = 7;
         expect(summary).toEqual(expected);
+
+        inputs = {distance:1,parkTime:6};
+        summary = main(inputs);
+        expected = 8;
+        expect(summary).toEqual(expected);
     });
     it('within 2km and no parking', function() {
         let inputs = {distance:1,parkTime:0};
