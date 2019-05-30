@@ -22,7 +22,6 @@ function refinePrice(price) {
 function calcPrice(inputs) {
   let price = calcDistancePrice(inputs["distance"]);
   price += calcParkingPrice(inputs["parkTime"]);
-
   return refinePrice(price);
 }
 module.exports = function main(inputs) {
